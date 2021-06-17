@@ -23,6 +23,7 @@ public class PessoaController {
 		System.out.println("2) LISTAR PESSOAS CADASTRADAS");
 		System.out.println("3) CADASTRAR PRODUTOS");
 		System.out.println("4) LISTAR PRODUTOS CADASTRADOS");
+		System.out.println("5) EDITAR PRODUTO");
 		System.out.println("9) SAIR DO SISTEMA");
 		System.out.println("-----------------------");
 	}
@@ -33,7 +34,7 @@ public class PessoaController {
 
 		System.out.print("Informe o nome: ");
 		tec.nextLine();
-		pessoa.setNome(tec.nextLine());
+		pessoa.setNome(tec.nextLine().toUpperCase());
 
 		System.out.print("Informe o ano de nascimento: ");
 		pessoa.setAnoDeNascimento(tec.nextInt());
@@ -43,29 +44,29 @@ public class PessoaController {
 		
 		System.out.print("Informe o país: ");
 		tec.nextLine();
-		pessoa.setNomeDoPais(tec.nextLine());
+		pessoa.setNomeDoPais(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe a sigla do país: ");
-		pessoa.setSiglaPais(tec.nextLine());
+		pessoa.setSiglaPais(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe o estado: ");
-		pessoa.setNomeDoEstado(tec.nextLine());
+		pessoa.setNomeDoEstado(tec.nextLine().toString());
 		
 		System.out.print("Informe a sigla do estado: ");
-		pessoa.setSiglaEstado(tec.nextLine());
+		pessoa.setSiglaEstado(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe a cidade: ");
-		pessoa.setNomeDaCidade(tec.nextLine());
+		pessoa.setNomeDaCidade(tec.nextLine().toUpperCase());
 		
 		
 		System.out.print("Informe o nome do bairro: ");
-		pessoa.setBairro(tec.nextLine());
+		pessoa.setBairro(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe o nome da rua: ");
-		pessoa.setNomedaRua(tec.nextLine());
+		pessoa.setNomedaRua(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe o complemento: ");
-		pessoa.setComplemento(tec.nextLine());
+		pessoa.setComplemento(tec.nextLine().toUpperCase());
 		
 		System.out.print("Informe o número: ");
 
@@ -103,22 +104,4 @@ public class PessoaController {
 		return pessoas;
 	}
 	
-	
-	public Pessoa cadastrar() {
-		Pessoa pessoa = new Pessoa();
-		pessoa.setAltura(1.62);
-		pessoa.setAnoDeNascimento(2004);
-		pessoa.setBairro("Rio Cerro");
-		pessoa.setComplemento("Casa");
-		pessoa.setNome("Júlia");
-		pessoa.setNomeDaCidade("Jaraguá Do Sul");
-		pessoa.setNomedaRua("Heinz Roeder");
-		pessoa.setNomeDoEstado("Santa Catarina");
-		pessoa.setNomeDoPais("Brasil");
-		pessoa.setNumero(70);
-		pessoa.setSiglaEstado("SC");
-		pessoa.setSiglaPais("BR");
-		
-		return pessoa;
-	}
 }

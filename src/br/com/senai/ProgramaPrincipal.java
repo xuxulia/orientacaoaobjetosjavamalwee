@@ -34,8 +34,6 @@ public class ProgramaPrincipal {
 				break;
 				
 			case 2:
-				
-				pessoas.add(pessoaController.cadastrar()); 
 				pessoaController.listarPessoas(pessoas);
 				break;
 				
@@ -48,6 +46,10 @@ public class ProgramaPrincipal {
 			case 4:
 				
 				produtoController.listarProdutos(produtos);
+				break;
+				
+			case 5:
+				produtoController.editarProduto(produtos);
 				break;
 				
 			case 9:
