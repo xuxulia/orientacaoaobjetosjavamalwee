@@ -13,7 +13,7 @@ public class ProdutoController {
 		
 		public Produto cadastrarProduto() {
 			Produto produto = new Produto();
-			System.out.println("---CADASTRAR PRODUTO---");
+			System.out.println("----------CADASTRAR PRODUTO----------");
 
 			System.out.print("Informe o nome do produto: ");
 			produto.setNomeDoProduto(tec.next().toUpperCase());
@@ -29,13 +29,18 @@ public class ProdutoController {
 	}
 	
 		public List<Produto> listarProdutos(List<Produto> produtos) {
+			
+			if(produtos.isEmpty()) {
+				System.out.println("Não possui produtos cadastrados!");
+				return null;
+			}
 			System.out.println("----------------------------------PRODUTOS CADASTRADOS---------------------------------");
 			
 			System.out.printf("| %2s | %18s | %18s | %20s | %18s |\n", "ID" , "Nome", "Valor unitário", "Quantidade", "Valor total");
 
 			for (int i = 0; i < produtos.size(); i++) {
 				System.out.printf("| %2d | %18s | %18.2f | %20d | %18.2f | \n",
-						i,
+						i + 1,
 						produtos.get(i).getNomeDoProduto(),
 						produtos.get(i).getValorUnitarioDoProduto(), 
 						produtos.get(i).getQuantidadeDoProduto(), 
@@ -47,8 +52,13 @@ public class ProdutoController {
 			
 			Produto produto = new Produto();
 			listarProdutos(produtos);
+			
+			if(produtos.isEmpty()) {
+				return null;
+			}
+			
 			System.out.println("Informe o Id do produto para editar: ");
-			int idProduto = tec.nextInt();
+			int idProduto = tec.nextInt() - 1;
 			
 			System.out.println("1) NOME DO PRODUTO");
 			System.out.println("2) QUANTIDADE DO PRODUTO");
@@ -106,4 +116,24 @@ public class ProdutoController {
 			return produtos; 
 		}
 
+		public void excluirProduto(List<Produto>produtos) {
+			listarProdutos(produtos);
+			
+			if(produtos.isEmpty()) {
+				return;
+			}
+			
+			System.out.println("----------EXCLUIR PRODUTO----------");
+			System.out.print("informe o ID do produto para excluir: ");
+			int idProduto = tec.nextInt() - 1;
+			
+			if(produtos.size() <= idProduto) {
+				System.out.println("Produto não cadastrado!");
+				return;
+			}
+			
+			produtos.remove(idProduto);
+			
+			
+		}
 }
