@@ -19,15 +19,10 @@ public class PessoaController {
 
 	public void menu() {
 		System.out.println("\n--------------MENU--------------");
-		System.out.println("1) CADASTRAR PESSOA");
-		System.out.println("2) LISTAR PESSOAS CADASTRADAS");
-		System.out.println("3) CADASTRAR PRODUTOS");
-		System.out.println("4) LISTAR PRODUTOS CADASTRADOS");
-		System.out.println("5) EDITAR PRODUTO");
-		System.out.println("6) EXCLUIR PRODUTO");
-		System.out.println("7) EDITAR PESSOAS CADASTRADAS");
-		System.out.println("8) EXCLUIR PESSOA");
-		System.out.println("9) SAIR DO SISTEMA");
+		System.out.println("1) PESSOA");
+		System.out.println("2) PRODUTOS");
+		System.out.println("3) VENDA");
+		System.out.println("4) SAIR DO SISTEMA");
 		System.out.println("-------------------------------");
 	}
 
@@ -298,6 +293,109 @@ public class PessoaController {
 			
 			break;
 			
+		case 8:
+			System.out.println("--- EDITAR NOME DA CIDADE ---");
+			System.out.println("Informe o novo nome da cidade: ");
+			pessoa.setNomeDaCidade(tec.next());
+			
+			pessoa.setNome(pessoas.get(idPessoa).getNome());
+			pessoa.setAltura(pessoas.get(idPessoa).getAltura());
+			pessoa.setAnoDeNascimento(pessoas.get(idPessoa).getAnoDeNascimento());
+			pessoa.setNomeDoPais(pessoas.get(idPessoa).getNomeDoPais());
+			pessoa.setSiglaPais(pessoas.get(idPessoa).getSiglaPais());
+			pessoa.setNomeDoEstado(pessoas.get(idPessoa).getNomeDoEstado());
+			pessoa.setSiglaEstado(pessoas.get(idPessoa).getSiglaEstado());
+			pessoa.setBairro(pessoas.get(idPessoa).getBairro());
+			pessoa.setNomedaRua(pessoas.get(idPessoa).getNomedaRua());
+			pessoa.setComplemento(pessoas.get(idPessoa).getComplemento());
+			pessoa.setNumero(pessoas.get(idPessoa).getNumero());
+			
+			pessoas.set(idPessoa, pessoa);
+			
+			break;
+			
+		case 9:
+			System.out.println("--- EDITAR BAIRRO ---");
+			System.out.println("Informe o novo bairro: ");
+			pessoa.setBairro(tec.next());
+			
+			pessoa.setNome(pessoas.get(idPessoa).getNome());
+			pessoa.setAltura(pessoas.get(idPessoa).getAltura());
+			pessoa.setAnoDeNascimento(pessoas.get(idPessoa).getAnoDeNascimento());
+			pessoa.setNomeDoPais(pessoas.get(idPessoa).getNomeDoPais());
+			pessoa.setSiglaPais(pessoas.get(idPessoa).getSiglaPais());
+			pessoa.setNomeDoEstado(pessoas.get(idPessoa).getNomeDoEstado());
+			pessoa.setSiglaEstado(pessoas.get(idPessoa).getSiglaEstado());
+			pessoa.setNomeDaCidade(pessoas.get(idPessoa).getNomeDaCidade());
+			pessoa.setNomedaRua(pessoas.get(idPessoa).getNomedaRua());
+			pessoa.setComplemento(pessoas.get(idPessoa).getComplemento());
+			pessoa.setNumero(pessoas.get(idPessoa).getNumero());
+			
+			pessoas.set(idPessoa, pessoa);
+			
+			break;
+case 10:
+			System.out.println("--- EDITAR NOME DA RUA ---");
+			System.out.println("Informe o nome da rua: ");
+			pessoa.setNomedaRua(tec.next());
+			
+			pessoa.setNome(pessoas.get(idPessoa).getNome());
+			pessoa.setAltura(pessoas.get(idPessoa).getAltura());
+			pessoa.setAnoDeNascimento(pessoas.get(idPessoa).getAnoDeNascimento());
+			pessoa.setNomeDoPais(pessoas.get(idPessoa).getNomeDoPais());
+			pessoa.setSiglaPais(pessoas.get(idPessoa).getSiglaPais());
+			pessoa.setNomeDoEstado(pessoas.get(idPessoa).getNomeDoEstado());
+			pessoa.setSiglaEstado(pessoas.get(idPessoa).getSiglaEstado());
+			pessoa.setNomeDaCidade(pessoas.get(idPessoa).getNomeDaCidade());
+			pessoa.setBairro(pessoas.get(idPessoa).getBairro());
+			pessoa.setComplemento(pessoas.get(idPessoa).getComplemento());
+			pessoa.setNumero(pessoas.get(idPessoa).getNumero());
+			
+			pessoas.set(idPessoa, pessoa);
+			
+			break;
+			
+		case 11:
+			System.out.println("--- EDITAR COMPLEMENTO ---");
+			System.out.println("Informe o novo complemento: ");
+			pessoa.setComplemento(tec.next());
+			
+			pessoa.setNome(pessoas.get(idPessoa).getNome());
+			pessoa.setAltura(pessoas.get(idPessoa).getAltura());
+			pessoa.setAnoDeNascimento(pessoas.get(idPessoa).getAnoDeNascimento());
+			pessoa.setNomeDoPais(pessoas.get(idPessoa).getNomeDoPais());
+			pessoa.setSiglaPais(pessoas.get(idPessoa).getSiglaPais());
+			pessoa.setNomeDoEstado(pessoas.get(idPessoa).getNomeDoEstado());
+			pessoa.setSiglaEstado(pessoas.get(idPessoa).getSiglaEstado());
+			pessoa.setNomeDaCidade(pessoas.get(idPessoa).getNomeDaCidade());
+			pessoa.setBairro(pessoas.get(idPessoa).getBairro());
+			pessoa.setNomedaRua(pessoas.get(idPessoa).getNomedaRua());
+			pessoa.setNumero(pessoas.get(idPessoa).getNumero());
+			
+			pessoas.set(idPessoa, pessoa);
+			
+			break;
+case 12:
+			System.out.println("--- EDITAR NÚMERO DA CASA ---");
+			System.out.println("Informe o novo número da casa: ");
+			pessoa.setNumero(tec.nextInt());
+			
+			pessoa.setNome(pessoas.get(idPessoa).getNome());
+			pessoa.setAltura(pessoas.get(idPessoa).getAltura());
+			pessoa.setAnoDeNascimento(pessoas.get(idPessoa).getAnoDeNascimento());
+			pessoa.setNomeDoPais(pessoas.get(idPessoa).getNomeDoPais());
+			pessoa.setSiglaPais(pessoas.get(idPessoa).getSiglaPais());
+			pessoa.setNomeDoEstado(pessoas.get(idPessoa).getNomeDoEstado());
+			pessoa.setSiglaEstado(pessoas.get(idPessoa).getSiglaEstado());
+			pessoa.setNomeDaCidade(pessoas.get(idPessoa).getNomeDaCidade());
+			pessoa.setBairro(pessoas.get(idPessoa).getBairro());
+			pessoa.setNomedaRua(pessoas.get(idPessoa).getNomedaRua());
+			pessoa.setComplemento(pessoas.get(idPessoa).getComplemento());
+			
+			pessoas.set(idPessoa, pessoa);
+			
+			break;
+		
 		default:
 			System.out.println("Opção Inválida!");
 		}

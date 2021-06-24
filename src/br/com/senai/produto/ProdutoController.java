@@ -10,9 +10,10 @@ public class ProdutoController {
 	public ProdutoController() {
 		tec = new Scanner(System.in);
 	}
-		
+	
 		public Produto cadastrarProduto() {
 			Produto produto = new Produto();
+
 			System.out.println("----------CADASTRAR PRODUTO----------");
 
 			System.out.print("Informe o nome do produto: ");
@@ -135,5 +136,29 @@ public class ProdutoController {
 			produtos.remove(idProduto);
 			
 			
+		}
+		
+		public List<Produto> menuProduto(List<Produto> produtos) {
+			
+			Produto produto = new Produto();
+			listarProdutos(produtos);
+			
+			if(produtos.isEmpty()) {
+				return null;
+			}
+			
+			System.out.println("Informe o Id do produto para editar: ");
+			int idProduto = tec.nextInt() - 1;
+			
+			System.out.println("1) NOME DO PRODUTO");
+			System.out.println("2) QUANTIDADE DO PRODUTO");
+			System.out.println("3) VALOR UNITÁRIO DO PRODUTO");
+			System.out.print("Informe o campo para ser editado: ");
+			int opcao = tec.nextInt();
+			switch(opcao) {
+			case 1: 
+		
+			}
+			return produtos;	
 		}
 }
