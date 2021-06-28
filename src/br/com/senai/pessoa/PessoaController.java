@@ -17,14 +17,6 @@ public class PessoaController {
 		return tec.nextInt();
 	}
 
-	public void menu() {
-		System.out.println("\n--------------MENU--------------");
-		System.out.println("1) PESSOA");
-		System.out.println("2) PRODUTOS");
-		System.out.println("3) VENDA");
-		System.out.println("4) SAIR DO SISTEMA");
-		System.out.println("-------------------------------");
-	}
 
 	public Pessoa cadastrarPessoa() {
 		Pessoa pessoa = new Pessoa();
@@ -402,5 +394,72 @@ case 12:
 		
 		return pessoas; 
 	}
+	
+	public void excluirPessoa(List <Pessoa> pessoas) {
+		listarPessoas(pessoas);
+		if(pessoas.isEmpty()) {
+			return;
+		}
+		System.out.println("--- EXCLUIR Pessoa ---");
+		
+		System.out.print("Informe o ID do pessoa para excluir: ");
+		int idPessoa = tec.nextInt() - 1;
+		
+		if(pessoas.size() <= idPessoa) {
+			System.out.println("Pessoa não cadastrado.");
+			return;
+		}
+		pessoas.remove(idPessoa);
+	}
+	
+	public void menu(List<Pessoa> pessoas) {
+		boolean sair = false;
+		
+		do {
+			
+		
+		System.out.println("\n--------------MENU--------------");
+		System.out.println("1) CADASTRAR PESSOA");
+		System.out.println("2) LISTAR PESSOAS CADASTRADAS");
+		System.out.println("3) EDITAR PESSOAS");
+		System.out.println("4) EXCLUIR PESSOAS");
+		System.out.println("5) SAIR");
+		System.out.println("-------------------------------");
+		
+		int opcao = leOpcao();
+		
+		switch(opcao) {
+		
+		case 1: 
+			pessoas.add(cadastrarPessoa());
+			break;
+			
+		case 2: 
+			listarPessoas(pessoas);
+			break;
+			
+		case 3:
+			editarPessoas(pessoas);
+			break;
+			
+		case 4:
+			excluirPessoa(pessoas);
+			
+		case 5:
+			sair = true;
+			break;
+
+					
+		default: 
+			System.out.println("Opção inválida!!!");
+			
+		}
+		
+	}while(!sair);	
+	
+	}
 
 }
+
+
+

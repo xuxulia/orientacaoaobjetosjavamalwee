@@ -3,6 +3,7 @@ package br.com.senai.produto;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class ProdutoController {
 	
 	private Scanner tec;
@@ -10,6 +11,13 @@ public class ProdutoController {
 	public ProdutoController() {
 		tec = new Scanner(System.in);
 	}
+
+	public int leOpcao() {
+		System.out.print("> ");
+		return tec.nextInt();
+	}
+
+
 	
 		public Produto cadastrarProduto() {
 			Produto produto = new Produto();
@@ -138,27 +146,56 @@ public class ProdutoController {
 			
 		}
 		
-		public List<Produto> menuProduto(List<Produto> produtos) {
-			
-			Produto produto = new Produto();
-			listarProdutos(produtos);
-			
-			if(produtos.isEmpty()) {
-				return null;
-			}
-			
-			System.out.println("Informe o Id do produto para editar: ");
-			int idProduto = tec.nextInt() - 1;
-			
-			System.out.println("1) NOME DO PRODUTO");
-			System.out.println("2) QUANTIDADE DO PRODUTO");
-			System.out.println("3) VALOR UNITÁRIO DO PRODUTO");
-			System.out.print("Informe o campo para ser editado: ");
-			int opcao = tec.nextInt();
-			switch(opcao) {
-			case 1: 
 		
+		public void menu(List<Produto> produtos) {
+			
+			
+			boolean sair = false;
+			
+			do {
+					
+				
+				System.out.println("\n--------------MENU--------------");
+				System.out.println("1) CADASTRAR PRODUTO");
+				System.out.println("2) LISTAR PRODUTO");
+				System.out.println("3) EDITAR PRODUTO");
+				System.out.println("4) EXCLUIR PRODUTO");
+				System.out.println("5) SAIR");;
+				System.out.println("-------------------------------");
+				
+				int opcao = leOpcao();
+				
+				switch(opcao) {
+				
+				case 1: 
+					produtos.add(cadastrarProduto());
+					break;
+					
+				case 2: 
+					listarProdutos(produtos);
+					break;
+					
+				case 3: 
+					editarProduto(produtos);
+					break;
+					
+				case 4: 
+					excluirProduto(produtos);
+					break;
+					
+				case 5:
+					sair = true;
+					break;
+
+				default:
+					System.out.println("Opção inválida!");
+					break;
+
+				}
+				
+			}while(!sair);	
+			
 			}
-			return produtos;	
+
 		}
-}
+
